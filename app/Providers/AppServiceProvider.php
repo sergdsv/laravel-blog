@@ -32,7 +32,6 @@ class AppServiceProvider extends ServiceProvider
             
             $countPost = Post::all()->count();
             $countCategories = Category::all()->count();
-           
 
             $event->menu->add('MAIN NAVIGATION');
 

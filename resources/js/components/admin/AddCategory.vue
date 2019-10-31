@@ -11,13 +11,6 @@
                 <i class="glyphicon glyphicon-plus"></i>
             </button></div>
 
-            <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Кнопка</button>
-  </div>
-</div>
-
         <form v-on:submit.prevent="addCategories()" v-show="show"
         :class="{'has-error': ($v.newCategory.$dirty && !$v.newCategory.required) || ($v.newCategory.$dirty && !$v.newCategory.minLentgh)}"
         >

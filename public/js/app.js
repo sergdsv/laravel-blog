@@ -1879,6 +1879,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AddCategory",
@@ -37227,65 +37234,69 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "form-inline" }, [
-    _c(
-      "select",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.show,
-            expression: "!show"
-          }
+  return _c("div", { staticClass: "form-cat" }, [
+    _c("div", { staticClass: "input-group" }, [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: !_vm.show,
+              expression: "!show"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "category_id", placeholder: "Категория" }
+        },
+        [
+          _c("option", { attrs: { selected: "", disabled: "" } }, [
+            _vm._v("Выберите категорию")
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.cat, function(category, index) {
+            return _c(
+              "option",
+              { key: index, domProps: { value: category.id } },
+              [
+                _vm._v(
+                  "\r\n                " +
+                    _vm._s(category.title) +
+                    "\r\n            "
+                )
+              ]
+            )
+          })
         ],
-        staticClass: "form-control",
-        attrs: { name: "category_id", placeholder: "Категория" }
-      },
-      [
-        _c("option", { attrs: { selected: "", disabled: "" } }, [
-          _vm._v("Выберите категорию")
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.cat, function(category, index) {
-          return _c(
-            "option",
-            { key: index, domProps: { value: category.id } },
-            [
-              _vm._v(
-                "\r\n                " +
-                  _vm._s(category.title) +
-                  "\r\n            "
-              )
-            ]
-          )
-        })
-      ],
-      2
-    ),
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: !_vm.show,
+              expression: "!show"
+            }
+          ],
+          staticClass: "btn btn-default btn-sm",
+          attrs: { type: "submit" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.show = !_vm.show
+            }
+          }
+        },
+        [_c("i", { staticClass: "glyphicon glyphicon-plus" })]
+      )
+    ]),
     _vm._v(" "),
-    _c(
-      "button",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.show,
-            expression: "!show"
-          }
-        ],
-        staticClass: "btn btn-default btn-sm",
-        attrs: { type: "submit" },
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            _vm.show = !_vm.show
-          }
-        }
-      },
-      [_c("i", { staticClass: "glyphicon glyphicon-plus" })]
-    ),
+    _vm._m(0),
     _vm._v(" "),
     _c(
       "form",
@@ -37352,13 +37363,40 @@ var render = function() {
               : _vm._e()
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(1)
         ])
       ]
     )
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group mb-3" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          placeholder: "Recipient's username",
+          "aria-label": "Recipient's username",
+          "aria-describedby": "button-addon2"
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "input-group-append" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-outline-secondary",
+            attrs: { type: "button", id: "button-addon2" }
+          },
+          [_vm._v("Кнопка")]
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

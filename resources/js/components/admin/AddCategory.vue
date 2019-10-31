@@ -1,6 +1,6 @@
 <template>
-<div class="form-inline">
-
+<div class="form-cat">
+    <div class="input-group">
         <select v-show="!show" name="category_id" class="form-control" placeholder="Категория">
             <option selected disabled>Выберите категорию</option>
             <option v-for="(category, index) in cat" :key="index" :value="category.id">
@@ -9,7 +9,14 @@
         </select>
             <button v-show="!show" v-on:click.prevent="show = !show" type="submit" class="btn btn-default btn-sm">
                 <i class="glyphicon glyphicon-plus"></i>
-            </button>
+            </button></div>
+
+            <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Кнопка</button>
+  </div>
+</div>
 
         <form v-on:submit.prevent="addCategories()" v-show="show"
         :class="{'has-error': ($v.newCategory.$dirty && !$v.newCategory.required) || ($v.newCategory.$dirty && !$v.newCategory.minLentgh)}"

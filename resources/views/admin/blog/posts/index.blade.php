@@ -11,6 +11,8 @@
 <a href="{{url('admin/posts/create')}}" class="btn btn-app"><i class="fa fa-plus"></i>Добавить</a>
 
 
+
+
 <div class="box">
             <div class="box-header">
               <h3 class="box-title">Все записи</h3>
@@ -25,6 +27,8 @@
                   <!-- <th>Текст</th> -->
                   <th>Дата создания</th>
                   <th>Категория</th>
+                  <th>Коментарии</th>
+                  <th>Пользователь</th>
                   <th>Изображение</th>
                   <th>Действия</th>
                 </tr>
@@ -37,6 +41,8 @@
                     <!-- <td>{{ $post->content }}</td> -->
                     <td>{{ $post->created_at }}</td>
                     <td>{{ $post->category->title }}</td>
+                    <td>{{ $post->comments->count() }}</td>
+                    <td>{{ $post->user->name }}</td>
                     <td class="text-center"><img style="height: 40px;" src="/images/{{ $post->image }}" alt=""></td>
                     <td>
                       <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default-show-{{$post->id}}">
@@ -55,6 +61,8 @@
                                   <p>{{ $post->category->title }}</p>
                                   <p>{{ $post->created_at }}</p>
                                   <p>{{ $post->content }}</p>
+                                  <div>
+                                  </div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

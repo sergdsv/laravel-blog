@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Facades\Auth;
 use Storage;
+use Laravelista\Comments\Commentable;
 
 class Post extends Model
 {
+
+    
+
 
     protected $fillable = ['title', 'content', 'category_id', 'date', 'image'];
 
@@ -16,6 +20,13 @@ class Post extends Model
     {
     	return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class, 'user_id');
+    }
+
+    use Commentable;
 
     use Sluggable;
 

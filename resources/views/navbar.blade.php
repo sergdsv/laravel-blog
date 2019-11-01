@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-md navbar-custom">
         <div class="container">
           <a class="navbar-brand" href="/">
           <h1 class="title"><i class="fa fa-linux"></i> BLOG</h2>
@@ -10,7 +10,11 @@
         @auth
           <li class="nav-item dropdown dropdown-menu-right">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img class="avatar" src="assets/img/avatar.jpg">
+            @if($post->user->avatar)
+                <img src="images/{{ $post->user->avatar }}" />
+            @else
+                <img src="images/user/no_user_avatar.png" style="width: 40px;"/>
+            @endif
               <span class="user">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="container main-section border">
+<div class="container main-section border mt-1">
 
         @foreach ($posts as $post)
             <div class="row">

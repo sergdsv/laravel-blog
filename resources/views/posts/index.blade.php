@@ -26,7 +26,7 @@
                             <i class="fa fa-calendar" aria-hidden="true"></i> <span>{{ $post->created_at }}</span>
                         </li>
                         <li class="list-inline-item">
-                            <i class="fa fa-comment" aria-hidden="true"></i> <span class="text-info">Коментариев: {{ $post->comments->count() }}</span>
+                            <i class="fa fa-comment" aria-hidden="true"></i> <span class="text-info">Коментарии: {{ $post->comments->count() }}</span>
                         </li>
                         <li class="list-inline-item">
                             <i class="fa fa-share-square-o" aria-hidden="true"></i> <span class="text-info">Категория: {{$post->category->title}}</span>

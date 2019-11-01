@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<i class="fa fa-blog"></i><b> Admin</b>',
 
     'logo_mini' => '<b>A</b>LT',
 
@@ -131,6 +131,7 @@ return [
             'text' => 'search',
             'search' => true,
         ],
+
         // ['header' => 'main_navigation'],
 
         // [

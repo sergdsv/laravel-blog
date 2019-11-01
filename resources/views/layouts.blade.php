@@ -21,6 +21,8 @@
 
 <div id="app">
 
+    
+
     @yield('content')
 
 

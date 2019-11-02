@@ -43,7 +43,7 @@
                 </div>
                 </div>
             </div>
-            @comments(['model' => $post])            
+            @comments(['model' => $post])
 </div>
 
 @endsection

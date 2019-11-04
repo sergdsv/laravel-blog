@@ -7,7 +7,7 @@
         <ul class="navbar-nav ml-auto">
         @if (Route::has('login'))
         @auth
-          <li class="nav-item dropdown dropdown-menu-right animated pulse">
+          <li class="nav-item dropdown dropdown-menu-right">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             @if(Auth::user()->avatar)
                 <img class="rounded-circle" src="{{ '/images/users/' . Auth::user()->avatar }}" style="width: 50px;"/>

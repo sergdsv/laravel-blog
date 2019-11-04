@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="container main-section border">
+<div class="container main-section border animated fadeIn">
 
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-12">
@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-lg-10 col-sm-10 col-7">
                     <h4 class="text-primary"><a href="/posts/{{ $post->id }}">{{$post->title}}</a></h4>
-                    <p>{{ $post->content }}</p>  
+                    <p>{{ $post->content }}</p>
                     <!-- <button class="btn btn-sm btn-dark">Read more</button> -->
                     </div>
                 </div>

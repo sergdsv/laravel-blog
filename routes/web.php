@@ -26,9 +26,13 @@ Route::get('/admin', function () {
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
     Route::resource('/posts', 'PostsController');
-	Route::resource('/categories', 'CategoriesController');    
+	Route::resource('/categories', 'CategoriesController');
 });
 
 Route::group([], function(){
     Route::resource('/posts', 'HomeController');
 });
+
+Route::get('logout-user', 'Auth\LoginController@logout');
+Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'Auth\UserController@edit']);
+Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'Auth\UserController@update']);

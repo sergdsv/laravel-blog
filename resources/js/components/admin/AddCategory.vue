@@ -1,7 +1,7 @@
 <template>
-<div class="form-cat">
-    <div class="input-group">
-        <select v-show="!show" name="category_id" class="form-control" placeholder="Категория">
+<div class="form-cart">
+    <div class="input-group inputflex" v-show="!show">
+        <select name="category_id" class="form-control" placeholder="Категория">
             <option selected disabled>Выберите категорию</option>
             <option v-for="(category, index) in cat" :key="index" :value="category.id">
                 {{ category.title }}
@@ -9,31 +9,36 @@
         </select>
             <button v-show="!show" v-on:click.prevent="show = !show" type="submit" class="btn btn-default btn-sm">
                 <i class="glyphicon glyphicon-plus"></i>
-            </button></div>
-
-        <form v-on:submit.prevent="addCategories()" v-show="show"
-        :class="{'has-error': ($v.newCategory.$dirty && !$v.newCategory.required) || ($v.newCategory.$dirty && !$v.newCategory.minLentgh)}"
-        >
-        <div class="form-inline">
-            <div class="form-group">
-                <input v-model="newCategory" name="newCategory" 
-                type="text" class="form-control">
-                <span class="text-danger"
-                        v-if="$v.newCategory.$dirty && !$v.newCategory.required"
-                        >Введите пароль
-                </span>
-                <span class="text-danger"
-                    v-else-if="$v.newCategory.$dirty && !$v.newCategory.minLentgh"
-                    >Пароль должен быть не меньше {{$v.newCategory.$params.minLentgh.min}} символов. Сейчас Вы ввели {{newCategory.length}}
-                </span>
-            </div>
-            <div class="form-group">
-            <button class="btn btn-danger btn-sm">Добавить категорию</button>
-            </div>
+            </button>
         </div>
-        </form>
-    
-        
+        <div v-show="show">
+            <form v-on:submit.prevent="addCategories()"
+            :class="{'has-error': ($v.newCategory.$dirty && !$v.newCategory.required) || ($v.newCategory.$dirty && !$v.newCategory.minLentgh)}"
+            >
+            <div class="form-inline animated fadeIn">
+                <div class="input-group inputflex">
+                    <input v-model="newCategory" name="newCategory"
+                    type="text" class="form-control">
+                    <span class="text-danger"
+                            v-if="$v.newCategory.$dirty && !$v.newCategory.required"
+                            >Введите пароль
+                    </span>
+                    <span class="text-danger"
+                        v-else-if="$v.newCategory.$dirty && !$v.newCategory.minLentgh"
+                        >Пароль должен быть не меньше {{$v.newCategory.$params.minLentgh.min}} символов. Сейчас Вы ввели {{newCategory.length}}
+                    </span>
+
+
+                <button class="btn btn-danger btn-sm btnmagin">Добавить категорию</button>
+                <button v-show="show" v-on:click.prevent="show = !show" class="btn btn-default btn-sm">
+                    <i class="glyphicon glyphicon-minus"></i>
+                </button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+
 </div>
 </template>
 
@@ -79,5 +84,12 @@ import {required, minLength} from 'vuelidate/lib/validators'
     }
 </script>
 
-
+<style scoped>
+        .inputflex{
+            display: flex;
+        }
+        .btnmagin{
+            margin: 0 5px 0 5px;
+        }
+</style>
 

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="container main-section border mt-1">
+<div class="container main-section border mt-1 animated fadeIn">
 
         @foreach ($posts as $post)
             <div class="row">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-lg-10 col-sm-10 col-7">
                     <h4 class="text-primary"><a href="posts/{{ $post->id }}">{{$post->title}}</a></h4>
-                    <p>{!! nl2br(e($post->content)) !!}</p>  
+                    <p>{!! nl2br(e($post->content)) !!}</p>
                     <!-- <button class="btn btn-sm btn-dark">Read more</button> -->
                     </div>
                 </div>
@@ -20,7 +20,12 @@
                     <div class="col-lg-12 col-sm-12 col-12">
                         <ul class="list-inline">
                         <li class="list-inline-item">
-                            <img src="https://dummyimage.com/20x20/a8a1a8/0f0f12" class="rounded-circle" width="20px"> <span>by</span> <span class="text-info">{{$post->user->name}}</span>
+                            @if($post->user->avatar)
+                                <img class="rounded-circle" src="{{ '/images/users/' . $post->user->avatar }}" style="width: 20px;"/>
+                            @else
+                                <img src="/images/user/no_user_avatar.png" style="width: 20px;"/>
+                            @endif
+                            <span>{{ $post->user->name }}</span>
                         </li>
                         <li class="list-inline-item">
                             <i class="fa fa-calendar" aria-hidden="true"></i> <span>{{ $post->created_at }}</span>

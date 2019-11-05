@@ -7,6 +7,8 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class PostsController extends Controller
 {
@@ -19,7 +21,7 @@ class PostsController extends Controller
     {
 
         $posts = Post::all();
-        
+
         return view('admin.blog.posts.index', ['posts' => $posts]);
     }
 
@@ -58,14 +60,19 @@ class PostsController extends Controller
             'category_id.required' => 'Заполните поле',
 
         ]);
-        
+
 
         if ($request-> hasFile ('image')) {
             $imageName = time().'.'.request()->image->extension();
             request()->image->move(public_path('images'), $imageName);
+            $image = Image::make('images/' . $imageName);
+            $image->resize(null, 500, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $image->save('images/' . $imageName);
             $request['image_name'] = $imageName;
-         } 
-        
+         }
+
         $post = Post::add($request->all());
 
         return back()->with('success', 'Запись успешно создана.');
@@ -116,13 +123,18 @@ class PostsController extends Controller
             'content.required' => 'Заполните поле',
 
         ]);
-        
+
 
         if ($request-> hasFile ('image')) {
             $imageName = time().'.'.request()->image->extension();
             request()->image->move(public_path('images'), $imageName);
-            $request['image_name'] = $imageName;            
-         } 
+            $image = Image::make('images/' . $imageName);
+            $image->resize(null, 500, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $image->save('images/' . $imageName);
+            $request['image_name'] = $imageName;
+         }
         $post = Post::find($id);
         $post->edit($request->all());
         return back()->with('success', 'Запись успешно отредактирована.');

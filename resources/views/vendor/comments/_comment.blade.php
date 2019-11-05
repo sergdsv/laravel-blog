@@ -6,7 +6,7 @@
 @else
   <li id="comment-{{ $comment->id }}" class="media">
 @endif
-    <img class="mr-3" style="width: 60px;" src="{{ '/images/users/' . Auth::user()->avatar }}">
+    <img class="mr-3" style="width: 60px;" src="/images/users/{{ $comment->commenter->avatar ?? 'no_user_avatar.png' }}">
     <div class="media-body">
         <h5 class="mt-0 mb-1">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5>
         <div style="white-space: pre-wrap;">{!! $markdown->line($comment->comment) !!}</div>

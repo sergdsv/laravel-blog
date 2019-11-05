@@ -33,6 +33,9 @@ Route::group([], function(){
     Route::resource('/posts', 'HomeController');
 });
 
+Route::get('/category/{id}', 'HomeController@category')->name('post.category');
+Route::get('/user/{id}', 'HomeController@user')->name('post.user');
+
 Route::get('logout-user', 'Auth\LoginController@logout');
 Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'Auth\UserController@edit']);
 Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'Auth\UserController@update']);

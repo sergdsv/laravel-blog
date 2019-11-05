@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
 
@@ -14,10 +15,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        $posts = Post::all();
 
-        return view('posts.index', ['posts' => $posts]);
+        $posts = Post::all();
+        $categories = Category::all();
+
+        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
     }
 
     /**
@@ -41,18 +43,53 @@ class HomeController extends Controller
         //
     }
 
+        /**
+     * Display posts by category the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+
+    public function category($id){
+
+        $categories = Category::all();
+        $posts = Post::all()->where('category_id', $id);
+
+        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+    }
+
+    /**
+    * Display posts by user the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+
+
+    public function user($id){
+
+        $categories = Category::all();
+        $posts = Post::all()->where('user_id', $id);
+
+        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+    }
+
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
 
         $post = Post::find($id);
+        $categories = Category::all();
 
-        return view('posts.show', ['post' => $post]);
+        return view('posts.show', ['post' => $post, 'categories' => $categories]);
     }
 
     /**

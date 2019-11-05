@@ -7,10 +7,10 @@
 
                 <div class="row">
                     <div class="col-lg-2 col-sm-2 col-5">
-                    <img src="images/{{ $post->image }}" class="img-thumbnail" width="150px">
+                    <img src="/images/{{ $post->image }}" class="img-thumbnail" width="150px">
                     </div>
                     <div class="col-lg-10 col-sm-10 col-7">
-                        <h4 class="text-primary"><a href="posts/{{ $post->id }}">{{$post->title}}</a></h4>
+                        <h4 class="text-primary"><a href="/posts/{{ $post->id }}">{{$post->title}}</a></h4>
                         <p>{!! nl2br(e($post->content)) !!}</p>
                         <!-- <button class="btn btn-sm btn-dark">Read more</button> -->
                     </div>
@@ -24,7 +24,7 @@
                             @else
                                 <img src="/images/user/no_user_avatar.png" style="width: 20px;"/>
                             @endif
-                            <span>{{ $post->user->name }}</span>
+                            <a href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
                         </li>
                         <li class="list-inline-item">
                             <i class="fa fa-calendar" aria-hidden="true"></i> <span>{{ $post->created_at }}</span>
@@ -33,7 +33,7 @@
                             <i class="fa fa-comment" aria-hidden="true"></i> <span class="text-info">Коментарии: {{ $post->comments->count() }}</span>
                         </li>
                         <li class="list-inline-item">
-                            <i class="fa fa-share-square-o" aria-hidden="true"></i> <span class="text-info">Категория: {{$post->category->title}}</span>
+                            <i class="fa fa-share-square-o" aria-hidden="true"></i> <span class="text-info">Категория: <a href="{{ url('category/' . $post->category_id) }}">{{$post->category->title}}</a></span>
                         </li>
                         <!-- <li class="list-inline-item">
                             <i class="fa fa-tags" aria-hidden="true"></i>

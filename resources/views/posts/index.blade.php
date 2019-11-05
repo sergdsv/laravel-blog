@@ -1,7 +1,8 @@
 @extends('layout')
 @section('content')
 
-
+<div class="row">
+    <div class="col-lg-9 col-sm-9 col-9">
     @foreach ($posts as $post)
 
                 <div class="row">
@@ -47,5 +48,10 @@
                 </div>
         <hr>
     @endforeach
+    </div>
+    <div class="col-lg-3 col-sm-3 col-3">
+        @include('posts.sidebar')
+    </div>
+</div>
 
 @endsection

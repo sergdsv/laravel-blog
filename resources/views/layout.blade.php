@@ -25,14 +25,7 @@
 
     @include('navbar')
     <div class="container main-section border animated fadeIn">
-        <div class="row">
-            <div class="col-lg-9 col-sm-9 col-9">
                 @yield('content')
-            </div>
-            <div class="col-lg-3 col-sm-3 col-3">
-                @include('posts.sidebar')
-            </div>
-        </div>
     </div>
 
 </div>

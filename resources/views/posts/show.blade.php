@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-
+<div class="row">
+    <div class="col-lg-9 col-sm-9 col-9">
             <div class="row">
                 <div class="col-lg-2 col-sm-2 col-5">
                 <img src="/images/{{ $post->image }}" class="img-thumbnail" width="150px">
@@ -38,6 +39,11 @@
                 </div>
             </div>
             @comments(['model' => $post])
+    </div>
+    <div class="col-lg-3 col-sm-3 col-3">
+        @include('posts.sidebar')
+    </div>
+</div>
 
 
 @endsection

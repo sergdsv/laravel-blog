@@ -1,19 +1,17 @@
 @extends('layout')
 @section('content')
 
-<div class="container main-section border mt-1 animated fadeIn">
 
-        @foreach ($posts as $post)
-            <div class="row">
-                <div class="col-lg-12 col-sm-12 col-12">
+    @foreach ($posts as $post)
+
                 <div class="row">
                     <div class="col-lg-2 col-sm-2 col-5">
                     <img src="images/{{ $post->image }}" class="img-thumbnail" width="150px">
                     </div>
                     <div class="col-lg-10 col-sm-10 col-7">
-                    <h4 class="text-primary"><a href="posts/{{ $post->id }}">{{$post->title}}</a></h4>
-                    <p>{!! nl2br(e($post->content)) !!}</p>
-                    <!-- <button class="btn btn-sm btn-dark">Read more</button> -->
+                        <h4 class="text-primary"><a href="posts/{{ $post->id }}">{{$post->title}}</a></h4>
+                        <p>{!! nl2br(e($post->content)) !!}</p>
+                        <!-- <button class="btn btn-sm btn-dark">Read more</button> -->
                     </div>
                 </div>
                 <div class="row post-detail">
@@ -47,10 +45,7 @@
                         </ul>
                     </div>
                 </div>
-                </div>
-            </div>
-            <hr>
-        @endforeach
-</div>
+        <hr>
+    @endforeach
 
 @endsection

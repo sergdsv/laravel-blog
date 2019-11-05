@@ -1914,6 +1914,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AddCategory",
@@ -38047,22 +38049,6 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _vm.$v.newCategory.$dirty && !_vm.$v.newCategory.required
-                  ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v("Введите пароль\n                    ")
-                    ])
-                  : _vm.$v.newCategory.$dirty && !_vm.$v.newCategory.minLentgh
-                  ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v(
-                        "Пароль должен быть не меньше " +
-                          _vm._s(_vm.$v.newCategory.$params.minLentgh.min) +
-                          " символов. Сейчас Вы ввели " +
-                          _vm._s(_vm.newCategory.length) +
-                          "\n                    "
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
                 _c(
                   "button",
                   { staticClass: "btn btn-danger btn-sm btnmagin" },
@@ -38090,7 +38076,23 @@ var render = function() {
                   },
                   [_c("i", { staticClass: "glyphicon glyphicon-minus" })]
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _vm.$v.newCategory.$dirty && !_vm.$v.newCategory.required
+                ? _c("span", { staticClass: "text-danger" }, [
+                    _vm._v("Введите пароль\n                    ")
+                  ])
+                : _vm.$v.newCategory.$dirty && !_vm.$v.newCategory.minLentgh
+                ? _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(
+                      "Пароль должен быть не меньше " +
+                        _vm._s(_vm.$v.newCategory.$params.minLentgh.min) +
+                        " символов. Сейчас Вы ввели " +
+                        _vm._s(_vm.newCategory.length) +
+                        "\n                    "
+                    )
+                  ])
+                : _vm._e()
             ])
           ]
         )

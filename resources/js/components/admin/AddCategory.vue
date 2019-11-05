@@ -19,6 +19,15 @@
                 <div class="input-group inputflex">
                     <input v-model="newCategory" name="newCategory"
                     type="text" class="form-control">
+
+
+
+                <button class="btn btn-danger btn-sm btnmagin">Добавить категорию</button>
+                <button v-show="show" v-on:click.prevent="show = !show" class="btn btn-default btn-sm">
+                    <i class="glyphicon glyphicon-minus"></i>
+                </button>
+
+                </div>
                     <span class="text-danger"
                             v-if="$v.newCategory.$dirty && !$v.newCategory.required"
                             >Введите пароль
@@ -27,13 +36,6 @@
                         v-else-if="$v.newCategory.$dirty && !$v.newCategory.minLentgh"
                         >Пароль должен быть не меньше {{$v.newCategory.$params.minLentgh.min}} символов. Сейчас Вы ввели {{newCategory.length}}
                     </span>
-
-
-                <button class="btn btn-danger btn-sm btnmagin">Добавить категорию</button>
-                <button v-show="show" v-on:click.prevent="show = !show" class="btn btn-default btn-sm">
-                    <i class="glyphicon glyphicon-minus"></i>
-                </button>
-                </div>
             </div>
             </form>
         </div>

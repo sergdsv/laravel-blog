@@ -27,6 +27,8 @@ Vue.use(animateCss)
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('AddCategory', require('./components/admin/AddCategory.vue').default);
+Vue.component('LikePost', require('./components/posts/LikePost.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -18,8 +18,13 @@ class HomeController extends Controller
 
         $posts = Post::all();
         $categories = Category::all();
+        $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
-        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+        return view('posts.index', [
+                            'posts' => $posts,
+                            'categories' => $categories,
+                            'new_posts' => $new_posts
+                            ]);
     }
 
     /**
@@ -55,8 +60,13 @@ class HomeController extends Controller
 
         $categories = Category::all();
         $posts = Post::all()->where('category_id', $id);
+        $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
-        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+        return view('posts.index', [
+                    'posts' => $posts,
+                    'categories' => $categories,
+                    'new_posts' => $new_posts
+                    ]);
     }
 
     /**
@@ -71,8 +81,12 @@ class HomeController extends Controller
 
         $categories = Category::all();
         $posts = Post::all()->where('user_id', $id);
+        $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
-        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+        return view('posts.index', ['posts' => $posts,
+                            'categories' => $categories,
+                            'new_posts' => $new_posts
+                            ]);
     }
 
 
@@ -88,8 +102,13 @@ class HomeController extends Controller
 
         $post = Post::find($id);
         $categories = Category::all();
+        $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
-        return view('posts.show', ['post' => $post, 'categories' => $categories]);
+        return view('posts.show', [
+                        'post' => $post,
+                        'categories' => $categories,
+                        'new_posts' => $new_posts
+                        ]);
     }
 
     /**

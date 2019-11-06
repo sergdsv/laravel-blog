@@ -7,11 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;
 use Laravelista\Comments\Commenter;
+use Overtrue\LaravelFollow\Traits\CanFollow;
+use Overtrue\LaravelFollow\Traits\CanBeFollowed;
+use Overtrue\LaravelFollow\Traits\CanLike;
 
 class User extends Authenticatable
 {
     use Notifiable, Commenter;
     use HasRoleAndPermission;
+    use CanFollow, CanBeFollowed, CanLike;
 
     /**
      * The attributes that are mass assignable.

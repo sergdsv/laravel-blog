@@ -93,6 +93,7 @@ class ComposerStaticInit26c5e7f60a8c390d00cd2ca26a9c4827
         ),
         'O' => 
         array (
+            'Overtrue\\LaravelFollow\\' => 23,
             'Opis\\Closure\\' => 13,
         ),
         'N' => 
@@ -315,6 +316,10 @@ class ComposerStaticInit26c5e7f60a8c390d00cd2ca26a9c4827
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Overtrue\\LaravelFollow\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/laravel-follow/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -487,9 +492,9 @@ class ComposerStaticInit26c5e7f60a8c390d00cd2ca26a9c4827
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/UserController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoriesController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\PostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -498,6 +503,7 @@ class ComposerStaticInit26c5e7f60a8c390d00cd2ca26a9c4827
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Like' => __DIR__ . '/../..' . '/app/Like.php',
         'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -2700,6 +2706,28 @@ class ComposerStaticInit26c5e7f60a8c390d00cd2ca26a9c4827
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'Overtrue\\LaravelFollow\\Events\\Event' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/Event.php',
+        'Overtrue\\LaravelFollow\\Events\\RelationAttached' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/RelationAttached.php',
+        'Overtrue\\LaravelFollow\\Events\\RelationAttaching' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/RelationAttaching.php',
+        'Overtrue\\LaravelFollow\\Events\\RelationDetached' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/RelationDetached.php',
+        'Overtrue\\LaravelFollow\\Events\\RelationDetaching' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/RelationDetaching.php',
+        'Overtrue\\LaravelFollow\\Events\\RelationToggled' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/RelationToggled.php',
+        'Overtrue\\LaravelFollow\\Events\\RelationToggling' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/RelationToggling.php',
+        'Overtrue\\LaravelFollow\\Follow' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Follow.php',
+        'Overtrue\\LaravelFollow\\FollowRelation' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/FollowRelation.php',
+        'Overtrue\\LaravelFollow\\FollowServiceProvider' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/FollowServiceProvider.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBeBookmarked' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBeBookmarked.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBeFavorited' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBeFavorited.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBeFollowed' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBeFollowed.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBeLiked' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBeLiked.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBeSubscribed' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBeSubscribed.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBeVoted' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBeVoted.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanBookmark' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanBookmark.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanFavorite' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanFavorite.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanFollow' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanFollow.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanLike' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanLike.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanSubscribe' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanSubscribe.php',
+        'Overtrue\\LaravelFollow\\Traits\\CanVote' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Traits/CanVote.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',

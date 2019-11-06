@@ -44,6 +44,7 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'Overtrue\\LaravelFollow\\' => array($vendorDir . '/overtrue/laravel-follow/src'),
     'Opis\\Closure\\' => array($vendorDir . '/opis/closure/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
     'Moontoast\\Math\\' => array($vendorDir . '/moontoast/math/src/Moontoast/Math'),

@@ -1981,8 +1981,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      count: 0
+      count: 0,
+      animate: 0
     };
+  },
+  methods: {
+    changeBadge: function changeBadge() {
+      this.count = 1;
+      this.animate = 1;
+    }
   }
 });
 
@@ -38152,21 +38159,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { class: _vm.animate ? "animated heartBeat" : "" }, [
     _c(
       "a",
       {
         staticClass: "badge text-white badge-success",
         staticStyle: { cursor: "pointer" },
         on: {
-          click: function($event) {
+          "~click": function($event) {
             $event.preventDefault()
-            _vm.count += 1
+            return _vm.changeBadge($event)
           }
         }
       },
       [
-        _c("i", { staticClass: "fa fa-heart" }),
+        _c("i", {
+          staticClass: "fa fa-heart",
+          style: _vm.animate ? "color: red;" : ""
+        }),
         _vm._v(" Like " + _vm._s(_vm.count))
       ]
     )

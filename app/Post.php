@@ -7,12 +7,11 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 use Laravelista\Comments\Commentable;
+use Overtrue\LaravelFollow\Traits\CanBeLiked;
 
 class Post extends Model
 {
-
-    
-
+    use CanBeLiked;
 
     protected $fillable = ['title', 'content', 'category_id', 'date', 'image'];
 
@@ -72,7 +71,7 @@ class Post extends Model
     public function remove()
     {
         if($this->image != null && $this->image != 'no_image.png'){
-            Storage::delete('images/' . $this->image);            
+            Storage::delete('images/' . $this->image);
         }
         $this->delete();
     }

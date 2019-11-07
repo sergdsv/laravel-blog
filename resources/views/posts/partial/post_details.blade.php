@@ -2,7 +2,8 @@
         <div class="col-lg-12 col-sm-12 col-12">
             <ul class="list-inline">
             <li class="list-inline-item">
-                <like-post></like-post>
+
+                <like-post :post_id="{{ $post->id }}" :user_id="{{ Auth::check() ? Auth::id() : 'false'  }}"></like-post>
             </li>
             <li class="list-inline-item">
                 @if($post->user->avatar)

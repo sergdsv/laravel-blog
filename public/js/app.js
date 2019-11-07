@@ -1975,20 +1975,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['user_id', 'post_id'],
   name: "LikePost",
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
   data: function data() {
     return {
       count: 0,
-      animate: 0
+      animate: 0,
+      likes: ''
     };
+  },
+  mounted: function mounted() {
+    var app = this;
+    axios.get('/api/getlikes/' + app.user_id + '/' + app.post_id).then(function (response) {
+      app.likes = response.data;
+    })["catch"](function (error) {
+      console.log(error.message);
+    });
+
+    if (this.likes.userLike) {
+      this.animate = 1;
+    }
   },
   methods: {
     changeBadge: function changeBadge() {
-      this.count = 1;
-      this.animate = 1;
+      var app = this;
+
+      if (app.user_id) {
+        if (!app.likes.userLike) {
+          axios.get('/api/togglelikes/' + app.user_id + '/' + app.post_id).then(function (response) {
+            app.likes.likeCount += 1;
+            app.likes.userLike = !app.likes.userLike;
+          })["catch"](function (error) {
+            console.log(error.message);
+          });
+        } else {
+          axios.get('/api/togglelikes/' + app.user_id + '/' + app.post_id).then(function (response) {
+            app.likes.likeCount -= 1;
+            app.likes.userLike = !app.likes.userLike;
+          })["catch"](function (error) {
+            console.log(error.message);
+          });
+        }
+      }
+    },
+    toggleLike: function toggleLike(user_id, post_id) {
+      axios.get('/api/togglelikes/' + user_id + '/' + post_id).then(function (response) {})["catch"](function (error) {
+        console.log(error.message);
+      });
     }
   }
 });
@@ -38159,28 +38192,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { class: _vm.animate ? "animated heartBeat" : "" }, [
-    _c(
-      "a",
-      {
-        staticClass: "badge text-white badge-success",
-        staticStyle: { cursor: "pointer" },
-        on: {
-          "~click": function($event) {
-            $event.preventDefault()
-            return _vm.changeBadge($event)
+  return _c(
+    "div",
+    { class: _vm.likes.userLike ? "animated heartBeat" : "animated shake" },
+    [
+      _c(
+        "a",
+        {
+          staticClass: "badge text-white badge-success",
+          staticStyle: { cursor: "pointer" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.changeBadge($event)
+            }
           }
-        }
-      },
-      [
-        _c("i", {
-          staticClass: "fa fa-heart",
-          style: _vm.animate ? "color: red;" : ""
-        }),
-        _vm._v(" Like " + _vm._s(_vm.count))
-      ]
-    )
-  ])
+        },
+        [
+          _c("i", {
+            staticClass: "fa fa-heart",
+            style: _vm.likes.userLike ? "color: red;" : ""
+          }),
+          _vm._v(" Like " + _vm._s(_vm.likes.likeCount))
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

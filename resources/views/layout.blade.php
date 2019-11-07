@@ -25,7 +25,7 @@
 
     @include('navbar')
     <div class="container main-section border animated fadeIn">
-                @yield('content')
+        @yield('content')
     </div>
 
 </div>

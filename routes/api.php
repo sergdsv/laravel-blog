@@ -22,3 +22,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
 	Route::resource('/categories', 'ApiCategoriesController');
 });
 
+Route::get('/getlikes/{user_id}/{post_id}', 'ApiLikeController@getlike');
+Route::get('/togglelikes/{user_id}/{post_id}', 'ApiLikeController@togglelike');
+
+
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
@@ -20,10 +21,15 @@ class HomeController extends Controller
         $categories = Category::all();
         $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
+        $postslike = Post::all();
+        $postsTopLikesSort = new Post();
+        $postsTopLikesSort = $postsTopLikesSort->postsTopLikes($postslike);
+
         return view('posts.index', [
                             'posts' => $posts,
                             'categories' => $categories,
-                            'new_posts' => $new_posts
+                            'new_posts' => $new_posts,
+                            'postsTopLikesSort' => $postsTopLikesSort
                             ]);
     }
 
@@ -62,10 +68,15 @@ class HomeController extends Controller
         $posts = Post::all()->where('category_id', $id);
         $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
+        $postslike = Post::all();
+        $postsTopLikesSort = new Post();
+        $postsTopLikesSort = $postsTopLikesSort->postsTopLikes($postslike);
+
         return view('posts.index', [
                     'posts' => $posts,
                     'categories' => $categories,
-                    'new_posts' => $new_posts
+                    'new_posts' => $new_posts,
+                    'postsTopLikesSort' => $postsTopLikesSort
                     ]);
     }
 
@@ -83,9 +94,14 @@ class HomeController extends Controller
         $posts = Post::all()->where('user_id', $id);
         $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
+        $postslike = Post::all();
+        $postsTopLikesSort = new Post();
+        $postsTopLikesSort = $postsTopLikesSort->postsTopLikes($postslike);
+
         return view('posts.index', ['posts' => $posts,
                             'categories' => $categories,
-                            'new_posts' => $new_posts
+                            'new_posts' => $new_posts,
+                            'postsTopLikesSort' => $postsTopLikesSort
                             ]);
     }
 
@@ -104,10 +120,15 @@ class HomeController extends Controller
         $categories = Category::all();
         $new_posts = Post::orderBy('id', 'desc')->limit(5)->get();
 
+        $postslike = Post::all();
+        $postsTopLikesSort = new Post();
+        $postsTopLikesSort = $postsTopLikesSort->postsTopLikes($postslike);
+
         return view('posts.show', [
                         'post' => $post,
                         'categories' => $categories,
-                        'new_posts' => $new_posts
+                        'new_posts' => $new_posts,
+                        'postsTopLikesSort' => $postsTopLikesSort
                         ]);
     }
 

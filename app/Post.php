@@ -76,4 +76,23 @@ class Post extends Model
         $this->delete();
     }
 
+    public function postsTopLikes($posts){
+
+        $postsTopLikes = collect();
+
+        foreach ($posts as $post){
+            $likeCount = $post->likers()->count();
+            $postId = $post->id;
+            $postTitle = $post->title;
+            $postsTopLikes->push([
+                'postId' => $postId,
+                'postTitle' => $postTitle,
+                'likeCount' => $likeCount
+            ]);
+        }
+
+        $postsTopLikesSort = $postsTopLikes->sortByDesc('likeCount')->take(5);
+        return $postsTopLikesSort;
+    }
+
 }

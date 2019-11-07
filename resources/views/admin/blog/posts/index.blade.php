@@ -29,6 +29,7 @@
                   <th>Категория</th>
                   <th>Коментарии</th>
                   <th>Пользователь</th>
+                  <th>Лайки</th>
                   <th>Изображение</th>
                   <th>Действия</th>
                 </tr>
@@ -43,6 +44,7 @@
                     <td>{{ $post->category->title }}</td>
                     <td>{{ $post->comments->count() }}</td>
                     <td>{{ $post->user->name }}</td>
+                    <td>{{ $post->likers()->count() }}</td>
                     <td class="text-center"><img style="height: 40px;" src="/images/{{ $post->image }}" alt=""></td>
                     <td>
                       <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default-show-{{$post->id}}">

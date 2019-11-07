@@ -26,14 +26,6 @@ class Category extends Model
         ];
     }
 
-    public static function add ($fields)
-    {
-        // или можно написать $post = new self;
-        $post = new static;
-        $post->fill($fields);
-        $post->save();
-    }
-
     public function remove()
     {
         $this->delete();

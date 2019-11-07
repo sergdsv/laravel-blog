@@ -49,7 +49,10 @@ class CategoriesController extends Controller
             'title.min' => 'Имя должно содержать не менее 2 символов.',
             'title.max' => 'Имя не должно превышать 50 символов.',
         ]);
-        Category::add($request->all());
+        
+        $category = new Category();
+        $category->fill($request->all())->save();
+
         return back()->with('success', 'Запись успешно создана.');
     }
 

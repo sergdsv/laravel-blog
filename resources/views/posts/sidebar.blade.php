@@ -26,17 +26,24 @@
         </div>
 
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
-            @foreach ($new_posts as $post )
-                <div>
+          <div class="tab-pane fade show active p-1" id="one" role="tabpanel" aria-labelledby="one-tab">
+            <ul class="list-group list-group-flush">
+            @foreach ($new_posts as $post)
+                <li class="list-group-item">
+                    <div>
                     <span><a href="/posts/{{ $post->id }}"><small>{{ $post->title }}</small></a></span>
-                </div>
+                    <span><small>{{ $post->created_at->format("m/d/Y") }}</small></span>
+                    </div>
+                </li>
             @endforeach
+            </ul>
           </div>
           <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
-            <h5 class="card-title">Tab Card Two</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            @foreach ($postsTopLikesSort as $post)
+            <div>
+                <span><a href="/posts/{{ $post['postId'] }}"><small>{{ $post['postTitle'] }}</small></a></span>
+            </div>
+            @endforeach
           </div>
 
         </div>

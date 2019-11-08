@@ -67,16 +67,13 @@ import {required, minLength} from 'vuelidate/lib/validators'
                     this.card_error = true
                 return
             }
-                var app = this;
                 let formData = new FormData();
-                formData.append('newCategory', app.newCategory)
-                app.newCategory = ''
-                console.log(app.newCategory);
+                formData.append('newCategory', this.newCategory)
+                this.newCategory = ''
                 axios.post('/api/admin/categories', formData
-                ).then(function(response) {
-                    app.cat = response.data
-                    app.show = false
-                    // app.$router.push({path: '/'});
+                ).then(response => {
+                    this.cat = response.data
+                    this.show = false
                 }).catch(error => {
                     console.log(error.message);
                 })

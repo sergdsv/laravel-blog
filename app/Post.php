@@ -84,10 +84,12 @@ class Post extends Model
             $likeCount = $post->likers()->count();
             $postId = $post->id;
             $postTitle = $post->title;
+            $created_at = $post->created_at;
             $postsTopLikes->push([
                 'postId' => $postId,
                 'postTitle' => $postTitle,
-                'likeCount' => $likeCount
+                'likeCount' => $likeCount,
+                'created_at' => $created_at
             ]);
         }
 

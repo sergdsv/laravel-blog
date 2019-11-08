@@ -12,7 +12,6 @@
             @endforeach
         </nav>
     </div>
-  </div>
     <div class="card mt-3 tab-card">
         <div class="card-header tab-card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
@@ -26,25 +25,31 @@
         </div>
 
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active p-1" id="one" role="tabpanel" aria-labelledby="one-tab">
-            <ul class="list-group list-group-flush">
-            @foreach ($new_posts as $post)
-                <li class="list-group-item">
-                    <div>
-                    <span><a href="/posts/{{ $post->id }}"><small>{{ $post->title }}</small></a></span>
-                    <span><small>{{ $post->created_at->format("m/d/Y") }}</small></span>
-                    </div>
-                </li>
-            @endforeach
-            </ul>
-          </div>
-          <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
-            @foreach ($postsTopLikesSort as $post)
-            <div>
-                <span><a href="/posts/{{ $post['postId'] }}"><small>{{ $post['postTitle'] }}</small></a></span>
+          <div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="one-tab">
+                <div class="list-group list-group-flush">
+                @foreach ($new_posts as $post)
+                        <a href="/posts/{{ $post->id }}" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <small>{{ $post->title }}</small>
+                            </div>
+                            <small class="float-right">{{ $post->created_at->format("m/d/Y") }}</small>
+                        </a>
+                @endforeach
             </div>
-            @endforeach
-          </div>
+        </div>
+        <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
+        <div class="list-group list-group-flush">
+        @foreach ($postsTopLikesSort as $post)
+            <a href="/posts/{{ $post['postId'] }}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
 
+                    <small>{{ $post['postTitle'] }}</small>
+                </div>
+                <small class="float-right">{{ $post['created_at']->format("m/d/Y") }}</small>
+            </a>
+        @endforeach
+        </div>
         </div>
     </div>
+</div>
+</div>

@@ -1935,20 +1935,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addCategories: function addCategories() {
+      var _this = this;
+
       if (this.$v.$invalid) {
         this.$v.$touch();
         this.card_error = true;
         return;
       }
 
-      var app = this;
       var formData = new FormData();
-      formData.append('newCategory', app.newCategory);
-      app.newCategory = '';
-      console.log(app.newCategory);
+      formData.append('newCategory', this.newCategory);
+      this.newCategory = '';
       axios.post('/api/admin/categories', formData).then(function (response) {
-        app.cat = response.data;
-        app.show = false; // app.$router.push({path: '/'});
+        _this.cat = response.data;
+        _this.show = false;
       })["catch"](function (error) {
         console.log(error.message);
       });
@@ -1985,9 +1985,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    var app = this;
-    axios.get('/api/getlikes/' + app.user_id + '/' + app.post_id).then(function (response) {
-      app.likes = response.data;
+    var _this = this;
+
+    axios.get('/api/getlikes/' + this.user_id + '/' + this.post_id).then(function (response) {
+      _this.likes = response.data;
     })["catch"](function (error) {
       console.log(error.message);
     });
@@ -1998,20 +1999,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     changeBadge: function changeBadge() {
-      var app = this;
+      var _this2 = this;
 
-      if (app.user_id) {
-        if (!app.likes.userLike) {
-          axios.get('/api/togglelikes/' + app.user_id + '/' + app.post_id).then(function (response) {
-            app.likes.likeCount += 1;
-            app.likes.userLike = !app.likes.userLike;
+      if (this.user_id) {
+        if (!this.likes.userLike) {
+          axios.get('/api/togglelikes/' + this.user_id + '/' + this.post_id).then(function (response) {
+            _this2.likes.likeCount += 1;
+            _this2.likes.userLike = !_this2.likes.userLike;
           })["catch"](function (error) {
             console.log(error.message);
           });
         } else {
-          axios.get('/api/togglelikes/' + app.user_id + '/' + app.post_id).then(function (response) {
-            app.likes.likeCount -= 1;
-            app.likes.userLike = !app.likes.userLike;
+          axios.get('/api/togglelikes/' + this.user_id + '/' + this.post_id).then(function (response) {
+            _this2.likes.likeCount -= 1;
+            _this2.likes.userLike = !_this2.likes.userLike;
           })["catch"](function (error) {
             console.log(error.message);
           });

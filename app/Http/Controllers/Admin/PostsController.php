@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 
-
 class PostsController extends Controller
 {
     /**
@@ -123,7 +122,6 @@ class PostsController extends Controller
             'content.required' => 'Заполните поле',
 
         ]);
-
 
         if ($request-> hasFile ('image')) {
             $imageName = time().'.'.request()->image->extension();

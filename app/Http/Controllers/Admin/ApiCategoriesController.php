@@ -42,7 +42,6 @@ class ApiCategoriesController extends Controller
         $category->save();
 
         $categories = Category::all();
-
         return $categories;
     }
 

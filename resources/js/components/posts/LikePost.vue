@@ -18,10 +18,9 @@
             }
         },
         mounted() {
-            var app = this;
-            axios.get('/api/getlikes/' + app.user_id + '/' + app.post_id
-                ).then(function(response) {
-                    app.likes = response.data
+            axios.get('/api/getlikes/' + this.user_id + '/' + this.post_id
+                ).then(response => {
+                    this.likes = response.data
 
                 }).catch(error => {
                     console.log(error.message);
@@ -33,22 +32,21 @@
         },
         methods: {
             changeBadge(){
-                var app = this;
-                if(app.user_id){
-                    if(!app.likes.userLike){
-                        axios.get('/api/togglelikes/' + app.user_id + '/' + app.post_id
-                        ).then(function(response) {
-                            app.likes.likeCount += 1
-                            app.likes.userLike = !app.likes.userLike
+                if(this.user_id){
+                    if(!this.likes.userLike){
+                        axios.get('/api/togglelikes/' + this.user_id + '/' + this.post_id
+                        ).then(response => {
+                            this.likes.likeCount += 1
+                            this.likes.userLike = !this.likes.userLike
                         }).catch(error => {
                             console.log(error.message);
                         });
 
                     } else{
-                         axios.get('/api/togglelikes/' + app.user_id + '/' + app.post_id
-                        ).then(function(response) {
-                            app.likes.likeCount -= 1
-                            app.likes.userLike = !app.likes.userLike
+                         axios.get('/api/togglelikes/' + this.user_id + '/' + this.post_id
+                        ).then(response => {
+                            this.likes.likeCount -= 1
+                            this.likes.userLike = !this.likes.userLike
                         }).catch(error => {
                             console.log(error.message);
                         });
@@ -59,7 +57,7 @@
             },
             toggleLike(user_id, post_id){
                     axios.get('/api/togglelikes/' + user_id + '/' + post_id
-                ).then(function(response) {
+                ).then(response => {
                 }).catch(error => {
                     console.log(error.message);
                 });

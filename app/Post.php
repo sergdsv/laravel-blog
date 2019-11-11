@@ -12,6 +12,17 @@ use Overtrue\LaravelFollow\Traits\CanBeLiked;
 class Post extends Model
 {
     use CanBeLiked;
+    use Commentable;
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
     protected $fillable = ['title', 'content', 'category_id', 'date', 'image'];
 
@@ -23,19 +34,6 @@ class Post extends Model
     public function user()
     {
     	return $this->belongsTo(User::class, 'user_id');
-    }
-
-    use Commentable;
-
-    use Sluggable;
-
-    public function sluggable()
-    {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
     }
 
     public static function add ($fields)
@@ -55,6 +53,7 @@ class Post extends Model
 
     public function edit($fields)
     {
+        $this->slug  =  null ;
         $image = ($this->image);
         $this->fill($fields);
 

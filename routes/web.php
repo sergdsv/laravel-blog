@@ -26,7 +26,8 @@ Route::get('/admin', function () {
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
     Route::resource('/posts', 'PostsController');
-	Route::resource('/categories', 'CategoriesController');
+    Route::resource('/categories', 'CategoriesController');
+    Route::resource('/users', 'UsersController');
 });
 
 Route::group([], function(){

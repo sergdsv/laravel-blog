@@ -1,0 +1,1010 @@
+[
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "/",
+        "name": null,
+        "action": "App\\Http\\Controllers\\HomeController@index",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin",
+        "name": null,
+        "action": "Closure",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/categories",
+        "name": "categories.index",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@index",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "admin/categories",
+        "name": "categories.store",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@store",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/categories/create",
+        "name": "categories.create",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@create",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "admin/categories/{category}",
+        "name": "categories.destroy",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@destroy",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "admin/categories/{category}",
+        "name": "categories.update",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@update",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/categories/{category}",
+        "name": "categories.show",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@show",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/categories/{category}/edit",
+        "name": "categories.edit",
+        "action": "App\\Http\\Controllers\\Admin\\CategoriesController@edit",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/posts",
+        "name": "posts.index",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@index",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "admin/posts",
+        "name": "posts.store",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@store",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/posts/create",
+        "name": "posts.create",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@create",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "admin/posts/{post}",
+        "name": "posts.destroy",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@destroy",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/posts/{post}",
+        "name": "posts.show",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@show",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "admin/posts/{post}",
+        "name": "posts.update",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@update",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "admin/posts/{post}/edit",
+        "name": "posts.edit",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@edit",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/categories",
+        "name": "categories.index",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@index",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "api/admin/categories",
+        "name": "categories.store",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@store",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/categories/create",
+        "name": "categories.create",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@create",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "api/admin/categories/{category}",
+        "name": "categories.update",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@update",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "api/admin/categories/{category}",
+        "name": "categories.destroy",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@destroy",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/categories/{category}",
+        "name": "categories.show",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@show",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/categories/{category}/edit",
+        "name": "categories.edit",
+        "action": "App\\Http\\Controllers\\Admin\\ApiCategoriesController@edit",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/posts",
+        "name": "posts.index",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@index",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "api/admin/posts",
+        "name": "posts.store",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@store",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/posts/create",
+        "name": "posts.create",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@create",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/posts/{post}",
+        "name": "posts.show",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@show",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "api/admin/posts/{post}",
+        "name": "posts.destroy",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@destroy",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "api/admin/posts/{post}",
+        "name": "posts.update",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@update",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/admin/posts/{post}/edit",
+        "name": "posts.edit",
+        "action": "App\\Http\\Controllers\\Admin\\PostsController@edit",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/getlikes/{user_id}/{post_id}",
+        "name": null,
+        "action": "App\\Http\\Controllers\\ApiLikeController@getlike",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/togglelikes/{user_id}/{post_id}",
+        "name": null,
+        "action": "App\\Http\\Controllers\\ApiLikeController@togglelike",
+        "middleware": "api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "api/user",
+        "name": null,
+        "action": "Closure",
+        "middleware": "api,auth:api"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "category/{id}",
+        "name": "post.category",
+        "action": "App\\Http\\Controllers\\HomeController@category",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "comments",
+        "name": null,
+        "action": "Laravelista\\Comments\\CommentController@store",
+        "middleware": "web,Spatie\\Honeypot\\ProtectAgainstSpam"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "comments/{comment}",
+        "name": null,
+        "action": "Laravelista\\Comments\\CommentController@destroy",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "PUT",
+        "uri": "comments/{comment}",
+        "name": null,
+        "action": "Laravelista\\Comments\\CommentController@update",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "comments/{comment}",
+        "name": null,
+        "action": "Laravelista\\Comments\\CommentController@reply",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "home",
+        "name": "home",
+        "action": "Closure",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "login",
+        "name": null,
+        "action": "App\\Http\\Controllers\\Auth\\LoginController@login",
+        "middleware": "web,guest"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "login",
+        "name": "login",
+        "action": "App\\Http\\Controllers\\Auth\\LoginController@showLoginForm",
+        "middleware": "web,guest"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "logout",
+        "name": "logout",
+        "action": "App\\Http\\Controllers\\Auth\\LoginController@logout",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "logout-user",
+        "name": null,
+        "action": "App\\Http\\Controllers\\Auth\\LoginController@logout",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "password/confirm",
+        "name": "password.confirm",
+        "action": "App\\Http\\Controllers\\Auth\\ConfirmPasswordController@showConfirmForm",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "password/confirm",
+        "name": null,
+        "action": "App\\Http\\Controllers\\Auth\\ConfirmPasswordController@confirm",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "password/email",
+        "name": "password.email",
+        "action": "App\\Http\\Controllers\\Auth\\ForgotPasswordController@sendResetLinkEmail",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "password/reset",
+        "name": "password.request",
+        "action": "App\\Http\\Controllers\\Auth\\ForgotPasswordController@showLinkRequestForm",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "password/reset",
+        "name": "password.update",
+        "action": "App\\Http\\Controllers\\Auth\\ResetPasswordController@reset",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "password/reset/{token}",
+        "name": "password.reset",
+        "action": "App\\Http\\Controllers\\Auth\\ResetPasswordController@showResetForm",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "permission-deleted/{id}",
+        "name": "laravelroles::permission-show-deleted",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelpermissionsDeletedController@show",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "permission-destroy/{id}",
+        "name": "laravelroles::permission-item-destroy",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelpermissionsDeletedController@destroy",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "PUT",
+        "uri": "permission-restore/{id}",
+        "name": "laravelroles::permission-restore",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelpermissionsDeletedController@restorePermission",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "permissions",
+        "name": "laravelroles::permissions.index",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@index",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "permissions",
+        "name": "laravelroles::permissions.store",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@store",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "permissions-deleted",
+        "name": "laravelroles::permissions-deleted",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelpermissionsDeletedController@index",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "permissions-deleted-destroy-all",
+        "name": "laravelroles::destroy-all-deleted-permissions",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelpermissionsDeletedController@destroyAllDeletedPermissions",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "permissions-deleted-restore-all",
+        "name": "laravelroles::permissions-deleted-restore-all",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelpermissionsDeletedController@restoreAllDeletedPermissions",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "permissions/create",
+        "name": "laravelroles::permissions.create",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@create",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "permissions/{permission}",
+        "name": "laravelroles::permissions.destroy",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@destroy",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "permissions/{permission}",
+        "name": "laravelroles::permissions.update",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@update",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "permissions/{permission}",
+        "name": "laravelroles::permissions.show",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@show",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "permissions/{permission}/edit",
+        "name": "laravelroles::permissions.edit",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelPermissionsController@edit",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "posts",
+        "name": "posts.store",
+        "action": "App\\Http\\Controllers\\HomeController@store",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "posts",
+        "name": "posts.index",
+        "action": "App\\Http\\Controllers\\HomeController@index",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "posts/create",
+        "name": "posts.create",
+        "action": "App\\Http\\Controllers\\HomeController@create",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "posts/{post}",
+        "name": "posts.show",
+        "action": "App\\Http\\Controllers\\HomeController@show",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "posts/{post}",
+        "name": "posts.destroy",
+        "action": "App\\Http\\Controllers\\HomeController@destroy",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "posts/{post}",
+        "name": "posts.update",
+        "action": "App\\Http\\Controllers\\HomeController@update",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "posts/{post}/edit",
+        "name": "posts.edit",
+        "action": "App\\Http\\Controllers\\HomeController@edit",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "register",
+        "name": "register",
+        "action": "App\\Http\\Controllers\\Auth\\RegisterController@showRegistrationForm",
+        "middleware": "web,guest"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "register",
+        "name": null,
+        "action": "App\\Http\\Controllers\\Auth\\RegisterController@register",
+        "middleware": "web,guest"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "role-deleted/{id}",
+        "name": "laravelroles::role-show-deleted",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesDeletedController@show",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "role-destroy/{id}",
+        "name": "laravelroles::role-item-destroy",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesDeletedController@destroy",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "PUT",
+        "uri": "role-restore/{id}",
+        "name": "laravelroles::role-restore",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesDeletedController@restoreRole",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "roles",
+        "name": "laravelroles::roles.index",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@index",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "roles",
+        "name": "laravelroles::roles.store",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@store",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "roles-deleted",
+        "name": "laravelroles::roles-deleted",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesDeletedController@index",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "roles-deleted-destroy-all",
+        "name": "laravelroles::destroy-all-deleted-roles",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesDeletedController@destroyAllDeletedRoles",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "roles-deleted-restore-all",
+        "name": "laravelroles::roles-deleted-restore-all",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesDeletedController@restoreAllDeletedRoles",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "roles/create",
+        "name": "laravelroles::roles.create",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@create",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "PUT|PATCH",
+        "uri": "roles/{role}",
+        "name": "laravelroles::roles.update",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@update",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "DELETE",
+        "uri": "roles/{role}",
+        "name": "laravelroles::roles.destroy",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@destroy",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "roles/{role}",
+        "name": "laravelroles::roles.show",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@show",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "roles/{role}/edit",
+        "name": "laravelroles::roles.edit",
+        "action": "jeremykenedy\\LaravelRoles\\App\\Http\\Controllers\\LaravelRolesController@edit",
+        "middleware": "web,auth,role:admin"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/cache",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\CacheController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/cache/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\CacheController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/commands",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\CommandsController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/commands/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\CommandsController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/dumps",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\DumpController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/events",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\EventsController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/events/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\EventsController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/exceptions",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ExceptionController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/exceptions/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ExceptionController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "PUT",
+        "uri": "telescope/telescope-api/exceptions/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ExceptionController@update",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/gates",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\GatesController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/gates/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\GatesController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/jobs",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\QueueController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/jobs/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\QueueController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/logs",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\LogController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/logs/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\LogController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/mail",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MailController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/mail/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MailController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/mail/{telescopeEntryId}/download",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MailEmlController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/mail/{telescopeEntryId}/preview",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MailHtmlController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/models",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ModelsController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/models/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ModelsController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/monitored-tags",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MonitoredTagController@store",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/monitored-tags",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MonitoredTagController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/monitored-tags/delete",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\MonitoredTagController@destroy",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/notifications",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\NotificationsController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/notifications/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\NotificationsController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/queries",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\QueriesController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/queries/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\QueriesController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/redis",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\RedisController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/redis/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\RedisController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/requests",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\RequestsController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/requests/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\RequestsController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/schedule",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ScheduleController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/schedule/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ScheduleController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/toggle-recording",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\RecordingController@toggle",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "POST",
+        "uri": "telescope/telescope-api/views",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ViewsController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/telescope-api/views/{telescopeEntryId}",
+        "name": null,
+        "action": "Laravel\\Telescope\\Http\\Controllers\\ViewsController@show",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "telescope/{view?}",
+        "name": "telescope",
+        "action": "Laravel\\Telescope\\Http\\Controllers\\HomeController@index",
+        "middleware": "telescope"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "user/{id}",
+        "name": "post.user",
+        "action": "App\\Http\\Controllers\\HomeController@user",
+        "middleware": "web"
+    },
+    {
+        "domain": null,
+        "method": "GET|HEAD",
+        "uri": "users/{user}",
+        "name": "users.edit",
+        "action": "App\\Http\\Controllers\\Auth\\UserController@edit",
+        "middleware": "web,auth"
+    },
+    {
+        "domain": null,
+        "method": "PATCH",
+        "uri": "users/{user}/update",
+        "name": "users.update",
+        "action": "App\\Http\\Controllers\\Auth\\UserController@update",
+        "middleware": "web,auth"
+    }
+]

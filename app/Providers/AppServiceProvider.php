@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Category;
 use App\Post;
+use App\User;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Events\Dispatcher;
 use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
@@ -27,12 +28,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Dispatcher $events)
     {
-        
+
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
-            
+
             $countPost = Post::all()->count();
             $countCategories = Category::all()->count();
-           
+            $countUsers = User::all()->count();
+
+
 
             $event->menu->add('MAIN NAVIGATION');
 
@@ -59,20 +62,21 @@ class AppServiceProvider extends ServiceProvider
                         'label' => $countCategories,
                         'icon' => 'fa fa-poll-h'
                     ],
-                    // [
-                    //     'text' => 'Создать категорию',
-                    //     'url' => '/admin/categories/create',
-                    //     'icon' => 'fa fa-plus'
-                    // ],
+                    [
+                        'text' => 'Пользователи',
+                        'url' => '/admin/users',
+                        'icon' => 'fa fa-users',
+                        'label' => $countUsers,
+                    ],
                 ]
             ]);
 
             // dd($event);
-            
+
         });
 
-        
 
-        
+
+
     }
 }

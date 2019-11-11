@@ -10,6 +10,8 @@ use Laravelista\Comments\Commenter;
 use Overtrue\LaravelFollow\Traits\CanFollow;
 use Overtrue\LaravelFollow\Traits\CanBeFollowed;
 use Overtrue\LaravelFollow\Traits\CanLike;
+use Storage;
+
 
 class User extends Authenticatable
 {
@@ -43,5 +45,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts()
+    {
+    	return $this->hasMany(Post::class);
+    }
+
+
 
 }
